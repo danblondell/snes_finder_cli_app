@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "snes_finder_cli_app"
+
+SnesFinderCliApp::CLI.new.call
