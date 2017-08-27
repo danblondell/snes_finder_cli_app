@@ -1,4 +1,9 @@
 class SnesFinderCliApp::CLI
+  def initialize
+    @bestbuy = SnesFinderCliApp::BestBuy.new
+    @amazon = SnesFinderCliApp::Amazon.new
+    @target = SnesFinderCliApp::Target.new
+  end
 
   def call
     puts "Here are the current listings for SNES Classic"
@@ -13,7 +18,7 @@ class SnesFinderCliApp::CLI
     if input.downcase == "exit"
       puts "Come again soon!"
     elsif input.to_i == 1
-      puts "Best Buy URL"
+      puts "#{@bestbuy.url}"
     elsif input.to_i == 1
       puts "Amazon URL"
     elsif input.to_i == 2
