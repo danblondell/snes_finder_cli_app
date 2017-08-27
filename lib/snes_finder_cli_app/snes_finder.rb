@@ -6,34 +6,52 @@ class SnesFinderCliApp::BestBuy
   end
 
   def scraper
-    # @doc = Watir::Browser.start @url
-
     browser = Watir::Browser.new :chrome
     browser.goto @url
 
     @doc = Nokogiri::HTML.parse(browser.html)
+    browser.close
     @status = @doc.css(".cart-button").text
   end
-  binding.pry
 
 end
 
 
 
 class SnesFinderCliApp::Amazon
-  attr_accessor :url
+  attr_accessor :url, :doc, :status
 
   def initialize
     @url = "https://www.amazon.com/Super-NES-Classic/dp/B0721GGGS9/ref=sr_1_1?ie=UTF8&qid=1503868738&sr=8-1&keywords=snes+classic"
+  end
+
+  def scraper
+    # browser = Watir::Browser.new :chrome
+    # browser.goto @url
+
+    # @doc = Nokogiri::HTML.parse(browser.html)
+    # brower.close
+    @doc = Nokogiri::HTML.parse(@url)
+    binding.pry
+    @status = @doc.css(".cart-button").text
   end
 end
 
 
 
 class SnesFinderCliApp::Target
-  attr_accessor :url
+  attr_accessor :url, :doc, :status
 
   def initialize
     @url = "https://www.target.com/p/nintendo-174-super-nes-classic-edition/-/A-52826093#lnk=sametab"
+  end
+
+  def scraper
+    browser = Watir::Browser.new :chrome
+    browser.goto @url
+
+    @doc = Nokogiri::HTML.parse(browser.html)
+    brower.close
+    @status = @doc.css(".cart-button").text
   end
 end

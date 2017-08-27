@@ -7,9 +7,9 @@ class SnesFinderCliApp::CLI
 
   def call
     puts "Here are the current listings for SNES Classic"
-    puts "1. Best Buy - #{@bestbuy.scraper}"
-    puts "2. Amazon - out of stock"
-    puts "3. Target - PRE-ORDER!"
+    # puts "1. Best Buy - #{@bestbuy.scraper}"
+    puts "2. Amazon - #{@bestbuy.scraper}"
+    puts "3. Target - #{@bestbuy.scraper}"
     puts "\n"
     puts "Press ENTER to refresh or type the number of the link you are interested in, or type exit to quit."
 
