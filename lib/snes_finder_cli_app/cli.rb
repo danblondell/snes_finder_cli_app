@@ -7,7 +7,7 @@ class SnesFinderCliApp::CLI
 
   def call
     puts "Here are the current listings for SNES Classic"
-    puts "1. Best Buy - out of stock"
+    puts "1. Best Buy - #{@bestbuy.scraper}"
     puts "2. Amazon - out of stock"
     puts "3. Target - PRE-ORDER!"
     puts "\n"
@@ -20,9 +20,9 @@ class SnesFinderCliApp::CLI
     elsif input.to_i == 1
       puts "#{@bestbuy.url}"
     elsif input.to_i == 1
-      puts "Amazon URL"
+      puts "#{@amazon.url}"
     elsif input.to_i == 2
-      puts "Target URL"
+      puts "#{@amazon.url}"
     else
       call
     end

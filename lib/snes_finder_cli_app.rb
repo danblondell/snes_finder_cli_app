@@ -1,6 +1,8 @@
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
+require 'watir'
+require "webdrivers"
 
 require "snes_finder_cli_app/version"
 require "snes_finder_cli_app/cli"
