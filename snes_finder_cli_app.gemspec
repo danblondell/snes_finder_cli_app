@@ -37,4 +37,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
 
   spec.add_dependency "nokogiri"
+  spec.add_dependency 'watir', '~> 6.7', '>= 6.7.3'
+  spec.add_dependency "webdrivers", "~> 3.0"
 end
