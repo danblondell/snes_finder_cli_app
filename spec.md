@@ -3,8 +3,8 @@ CLI app that searches several electronics store websites and checks if the SNES 
 ## specs
 [ ] CLI:
   [ ] checks status
-  [ ] asks if you want to recheck
-  [ ] prints url of requested site
+  [x] asks if you want to recheck
+  [x] prints url of requested site
 [ ] Correctly states status of "In Stock" / "Pre-Order" / "Out of Stock"
 [ ] snes_finder:
   [ ] Checks BestBuy
