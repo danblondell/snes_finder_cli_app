@@ -53,11 +53,13 @@ class SnesFinderCliApp::Target
   end
 
   def scraper
-    # browser = Watir::Browser.new :chrome
-    # browser.goto @url
+    browser = Watir::Browser.new :chrome, headless: true
+    browser.goto @url
 
-    @doc = Nokogiri::HTML.parse(@url)
+    @doc = Nokogiri::HTML.parse(browser.html)
+
     browser.close
-    @status = @doc.css(".cart-button").text
+
+    @status = @doc.css("#AddToCartAreaId .add-to-cart-wrap .btn-primary").text.strip.capitalize
   end
 end

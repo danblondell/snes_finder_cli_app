@@ -7,17 +7,17 @@ class SnesFinderCliApp::CLI
 
   def call
     puts "\nLet's see if the SNES Classic is in available for purchase."
-    
-    puts "\nChecking Best Buy. This might take a minute..."
-    bestbuy = @bestbuy.scraper
-    puts "Now checking Amazon..."
-    amazon = @amazon.scraper
+
+    # puts "\nChecking Best Buy. This might take a minute..."
+    # bestbuy = @bestbuy.scraper
+    # puts "Now checking Amazon..."
+    # amazon = @amazon.scraper
     puts "Checking Target now, just a bit longer..."
     target = @target.scraper
 
     puts "\nHere are the current listings for SNES Classic"
-    puts "1. Best Buy - #{bestbuy}"
-    puts "2. Amazon - #{amazon}"
+    # puts "1. Best Buy - #{bestbuy}"
+    # puts "2. Amazon - #{amazon}"
     puts "3. Target - #{target}"
 
     puts "\nType the number of the link you are interested in, or type refresh or exit."
