@@ -9,9 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Dan Blondell"]
   spec.email         = ["danblondell@gmail.com"]
   spec.summary       = "CLI app that checks major electronics retailers to see if SNES Classic is in stock or available for pre-order"
-
-  # spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  # spec.description   = %q{TODO: Write a longer description or delete this line.}
   spec.homepage      = "https://github.com/danblondell/snes_finder_cli_app"
   spec.license       = "MIT"
 
@@ -37,9 +34,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
 
   spec.add_dependency "nokogiri"
-  # spec.add_dependency 'watir-webdriver', '~> 0.9.9'
+  
   spec.add_dependency 'watir', '~> 6.7', '>= 6.7.3'
   spec.add_dependency "webdrivers", "~> 3.0"
 
-  spec.add_dependency 'headless', '~> 2.3', '>= 2.3.1'
 end

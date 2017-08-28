@@ -4,7 +4,6 @@ require 'pry'
 
 require 'webdrivers'
 require 'watir'
-require 'headless'
 
 require "snes_finder_cli_app/version"
 require "snes_finder_cli_app/cli"
