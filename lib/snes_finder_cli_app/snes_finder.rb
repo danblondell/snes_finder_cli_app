@@ -10,7 +10,9 @@ class SnesFinderCliApp::BestBuy
     browser.goto @url
 
     @doc = Nokogiri::HTML.parse(browser.html)
+
     browser.close
+
     @status = @doc.css(".cart-button").text
   end
 
@@ -22,19 +24,20 @@ class SnesFinderCliApp::Amazon
   attr_accessor :url, :doc, :status
 
   def initialize
-    @url = "https://www.amazon.com/Super-NES-Classic/dp/B0721GGGS9/ref=sr_1_1?ie=UTF8&qid=1503868738&sr=8-1&keywords=snes+classic"
+    @url = "https://www.amazon.com/Super-NES-Classic/dp/B0721GGGS9/ref=sr_1_1?ie=UTF8&qid=1503878302&sr=8-1&keywords=snes+classic"
   end
 
   def scraper
-    # browser = Watir::Browser.new :chrome
-    # browser.goto @url
+    browser = Watir::Browser.new :chrome
+    browser.goto @url
 
-    # @doc = Nokogiri::HTML.parse(browser.html)
-    # brower.close
-    @doc = Nokogiri::HTML.parse(@url)
-    binding.pry
-    @status = @doc.css(".cart-button").text
+    @doc = Nokogiri::HTML.parse(browser.html)
+
+    browser.close
+
+    @doc.css("#add-to-cart-button").empty? ? @status = "out of stock" : @status = @doc.css("#add-to-cart-button").attribute("value").value
   end
+
 end
 
 
@@ -51,7 +54,7 @@ class SnesFinderCliApp::Target
     browser.goto @url
 
     @doc = Nokogiri::HTML.parse(browser.html)
-    brower.close
+    browser.close
     @status = @doc.css(".cart-button").text
   end
 end

@@ -40,5 +40,4 @@ Gem::Specification.new do |spec|
   # spec.add_dependency 'watir-webdriver', '~> 0.9.9'
   spec.add_dependency 'watir', '~> 6.7', '>= 6.7.3'
   spec.add_dependency "webdrivers", "~> 3.0"
-  
 end
