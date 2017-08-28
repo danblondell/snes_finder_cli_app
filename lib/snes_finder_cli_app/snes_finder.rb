@@ -6,12 +6,15 @@ class SnesFinderCliApp::BestBuy
   end
 
   def scraper
-    browser = Watir::Browser.new :chrome
+    # headless = Headless.new
+    # headless.start
+    browser = Watir::Browser.new :chrome, headless: true
     browser.goto @url
 
     @doc = Nokogiri::HTML.parse(browser.html)
 
     browser.close
+    # headless.destroy
 
     @status = @doc.css(".cart-button").text
   end
@@ -28,14 +31,14 @@ class SnesFinderCliApp::Amazon
   end
 
   def scraper
-    browser = Watir::Browser.new :chrome
+    browser = Watir::Browser.new :chrome, headless: true
     browser.goto @url
 
     @doc = Nokogiri::HTML.parse(browser.html)
 
     browser.close
 
-    @doc.css("#add-to-cart-button").empty? ? @status = "out of stock" : @status = @doc.css("#add-to-cart-button").attribute("value").value
+    @doc.css("#add-to-cart-button").empty? ? @status = "Out of Stock" : @status = @doc.css("#add-to-cart-button").attribute("value").value
   end
 
 end
