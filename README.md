@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-To use it, just run the app. It gets going right away and has some simple follow up steps, if you want them.
+To use it, just run the app – `bin/snes-finder`. It gets going right away and has some simple follow up steps, if you want them.
 
 ## Development
 
