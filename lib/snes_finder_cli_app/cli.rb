@@ -34,14 +34,17 @@ class SnesFinderCliApp::CLI
     elsif input.downcase == "refresh"
       call
     elsif input.to_i == 1
+      puts "\n#{@bestbuy.more_info}"
       puts "\n#{@bestbuy.url}\n"
       puts "\nAnything else?"
       now_what
     elsif input.to_i == 2
+      puts "\n#{@amazon.more_info}"
       puts "\n#{@amazon.url}\n"
       puts "\nAnything else?"
       now_what
     elsif input.to_i == 3
+      puts "\n#{@target.more_info}"
       puts "\n#{@target.url}\n"
       puts "\nAnything else?"
       now_what
