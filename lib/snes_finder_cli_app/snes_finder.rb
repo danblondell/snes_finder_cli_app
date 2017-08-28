@@ -18,9 +18,6 @@ class SnesFinderCliApp::BestBuy
 
     @status = @doc.css(".cart-button").text
   end
-
-  binding.pry
-
 end
 
 
